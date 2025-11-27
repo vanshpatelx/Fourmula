@@ -1,0 +1,25 @@
+project_id = "wscbqaowafweppryqyrs"
+
+[functions.schedule-reminders]
+verify_jwt = false
+
+[functions.send-push-notification]
+verify_jwt = false
+
+[functions.rebuild-forecast]
+verify_jwt = false
+
+[functions.mark-taken]
+verify_jwt = false
+
+[functions.generate-daily-summary]
+verify_jwt = false
+
+[functions.ai-chat]
+verify_jwt = true
+
+[functions.cycle-add-event]
+verify_jwt = true
+
+[functions.cycle-undo-last]
+verify_jwt = true

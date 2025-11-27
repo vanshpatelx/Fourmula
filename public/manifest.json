@@ -1,0 +1,39 @@
+{
+  "name": "Fourmula - Cycle-Syncing Sports Supplement App",
+  "short_name": "Fourmula",
+  "description": "Track your menstrual cycle, optimize your training, and stay consistent with your Fourmula supplement",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fef8f6",
+  "theme_color": "#e55aa0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/ai-favicon.png",
+      "sizes": "16x16 32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr"
+}
