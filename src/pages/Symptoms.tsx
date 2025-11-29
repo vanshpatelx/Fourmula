@@ -54,8 +54,8 @@ const Symptoms = () => {
   const [mood, setMood] = useState<number[]>([3]);
   const [energy, setEnergy] = useState<number[]>([3]);
   const [sleep, setSleep] = useState<number[]>([3]);
-  const [cramps, setCramps] = useState<number[]>([1]);
-  const [bloating, setBloating] = useState<number[]>([1]);
+  const [cramps, setCramps] = useState<number[]>([0]);
+  const [bloating, setBloating] = useState<number[]>([0]);
   const [headache, setHeadache] = useState(false);
   const [breastTenderness, setBreastTenderness] = useState(false);
   const [nausea, setNausea] = useState(false);
@@ -98,8 +98,8 @@ const Symptoms = () => {
         setMood([data.mood || 3]);
         setEnergy([data.energy || 3]);
         setSleep([data.sleep || 3]);
-        setCramps([data.cramps || 1]);
-        setBloating([data.bloating || 1]);
+        setCramps([data.cramps ?? 0]);
+        setBloating([data.bloating ?? 0]);
         setHeadache(data.headache || false);
         setBreastTenderness(data.breast_tenderness || false);
         setNausea(data.nausea || false);
@@ -120,8 +120,8 @@ const Symptoms = () => {
         setMood([3]);
         setEnergy([3]);
         setSleep([3]);
-        setCramps([1]);
-        setBloating([1]);
+        setCramps([0]);
+        setBloating([0]);
         setHeadache(false);
         setBreastTenderness(false);
         setNausea(false);
@@ -162,8 +162,8 @@ const Symptoms = () => {
         mood: mood[0] || null,
         energy: energy[0] || null,
         sleep: sleep[0] || null,
-        cramps: cramps[0] || null,
-        bloating: bloating[0] || null,
+        cramps: cramps[0] ?? 0,
+        bloating: bloating[0] ?? 0,
         headache,
         breast_tenderness: breastTenderness,
         nausea,
@@ -229,10 +229,10 @@ const Symptoms = () => {
       return emojis[value - 1] || '😐';
     } else if (type === 'cramps') {
       const emojis = ['😊', '😐', '😣', '😰', '😵'];
-      return emojis[value - 1] || '😊';
+      return emojis[value] || '😊';
     } else {
       const emojis = ['😊', '😐', '😣', '😰', '😵'];
-      return emojis[value - 1] || '😊';
+      return emojis[value] || '😊';
     }
   };
 
@@ -479,8 +479,8 @@ const Symptoms = () => {
                     <Slider
                       value={cramps}
                       onValueChange={setCramps}
-                      max={5}
-                      min={1}
+                      max={4}
+                      min={0}
                       step={1}
                       className="w-full [&>.slider-track]:bg-gradient-to-r [&>.slider-track]:from-red/20 [&>.slider-track]:to-red/40 [&>.slider-range]:bg-gradient-to-r [&>.slider-range]:from-red-400 [&>.slider-range]:to-red-500 [&>.slider-thumb]:bg-red-500 [&>.slider-thumb]:shadow-lg [&>.slider-thumb]:border-2 [&>.slider-thumb]:border-white [&>.slider-range]:animate-pulse"
                     />
@@ -509,8 +509,8 @@ const Symptoms = () => {
                     <Slider
                       value={bloating}
                       onValueChange={setBloating}
-                      max={5}
-                      min={1}
+                      max={4}
+                      min={0}
                       step={1}
                       className="w-full [&>.slider-track]:bg-gradient-to-r [&>.slider-track]:from-orange/20 [&>.slider-track]:to-orange/40 [&>.slider-range]:bg-gradient-to-r [&>.slider-range]:from-orange-400 [&>.slider-range]:to-orange-500 [&>.slider-thumb]:bg-orange-500 [&>.slider-thumb]:shadow-lg [&>.slider-thumb]:border-2 [&>.slider-thumb]:border-white [&>.slider-range]:animate-pulse"
                     />
@@ -813,10 +813,10 @@ const Symptoms = () => {
                           <div className="space-y-4">
                             <Label className="text-lg font-semibold text-foreground">Cramps</Label>
                             <Slider
-                              value={cramps}
-                              onValueChange={setCramps}
-                              max={5}
-                              min={1}
+                            value={cramps}
+                            onValueChange={setCramps}
+                            max={4}
+                            min={0}
                               step={1}
                               className="w-full"
                             />
@@ -834,8 +834,8 @@ const Symptoms = () => {
                             <Slider
                               value={bloating}
                               onValueChange={setBloating}
-                              max={5}
-                              min={1}
+                              max={4}
+                              min={0}
                               step={1}
                               className="w-full"
                             />
@@ -1030,7 +1030,7 @@ const Symptoms = () => {
                             </div>
                             <div className="p-4 bg-background rounded-lg border border-border">
                               <div className="text-3xl mb-2">{getSliderEmoji(cramps[0], 'cramps')}</div>
-                              <div className="text-xs text-muted-foreground">Cramps: {cramps[0]}/5</div>
+                              <div className="text-xs text-muted-foreground">Cramps: {cramps[0]}/4</div>
                             </div>
                           </div>
                         </div>

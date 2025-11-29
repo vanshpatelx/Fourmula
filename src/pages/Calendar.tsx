@@ -706,7 +706,7 @@ const Calendar = () => {
                                   <span className="text-sm font-medium">Cramps</span>
                                 </div>
                                 <Badge variant="secondary" className="text-xs">
-                                  {emojiDrawerData.symptomLog.cramps === 1 ? 'Mild' : emojiDrawerData.symptomLog.cramps === 2 ? 'Moderate' : 'Severe'}
+                                  {emojiDrawerData.symptomLog.cramps === 1 ? 'Mild' : emojiDrawerData.symptomLog.cramps === 2 ? 'Moderate' : emojiDrawerData.symptomLog.cramps === 3 ? 'Severe' : 'Extreme'}
                                 </Badge>
                               </div>
                             )}
@@ -717,7 +717,7 @@ const Calendar = () => {
                                   <span className="text-sm font-medium">Bloating</span>
                                 </div>
                                 <Badge variant="secondary" className="text-xs">
-                                  {emojiDrawerData.symptomLog.bloating === 1 ? 'Mild' : emojiDrawerData.symptomLog.bloating === 2 ? 'Moderate' : 'Severe'}
+                                  {emojiDrawerData.symptomLog.bloating === 1 ? 'Mild' : emojiDrawerData.symptomLog.bloating === 2 ? 'Moderate' : emojiDrawerData.symptomLog.bloating === 3 ? 'Severe' : 'Extreme'}
                                 </Badge>
                               </div>
                             )}
