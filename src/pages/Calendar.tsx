@@ -967,39 +967,6 @@ const Calendar = () => {
                 >
                   Month View
                 </Button>
-                
-                {/* Week Selector - Only show when in week view */}
-                {mobileViewFilter === 'week' && (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                      >
-                        Wk {selectedWeekIndex + 1}
-                        <ChevronDown className="w-4 h-4 ml-1" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-popover" align="end">
-                      {weeks.map((week, index) => {
-                        const weekStart = week[0];
-                        const weekEnd = week[week.length - 1];
-                        return (
-                          <DropdownMenuItem
-                            key={index}
-                            onClick={() => {
-                              setSelectedWeekIndex(index);
-                              setCurrentWeekStart(weekStart);
-                            }}
-                            className={selectedWeekIndex === index ? 'bg-accent' : ''}
-                          >
-                            Week {index + 1} ({weekStart.getDate()} - {weekEnd.getDate()})
-                          </DropdownMenuItem>
-                        );
-                      })}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                )}
               </div>
 
               {/* View Mode Toggle */}
